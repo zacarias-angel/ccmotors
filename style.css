@@ -1,0 +1,547 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(270deg, black, #ffffff, black);
+}
+.MenuNav :nth-child(n){
+text-decoration: none;
+ color: black;
+}
+.Carrusel{
+    /* width: 100vw; */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+
+.Carrusel .lista .item{
+    position: absolute;
+    inset: 0 0 0 0 ;
+}
+.Carrusel .lista .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Carrusel .lista .item .ContenidoImg{
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #00000057;
+    position: absolute;
+    top: 15%;
+
+    max-width: 80%;
+    left: 30%;
+    transform: translate(-50%);
+   
+    box-sizing: border-box;
+    color:#fff;
+    text-shadow: 0 5xp 10px #0004;
+}
+.Carrusel .lista .item .ContenidoImg .titulo h2{
+    font-size: 100px;
+}
+.sublista{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.sublista .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.sublista .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.sublista .item .ctnDesCard{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.sublista .item .ctnDesCard .titulo{
+    font-weight: bold;
+}
+.flechas{
+position: absolute;
+top: 80%;
+right: 52%;
+width: 300px;
+max-width: 30%;
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.flechas button{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee4;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+  transition: 1s;
+  z-index: 100;
+}
+.flechas button:hover{
+    background-color: #eee; 
+    color: #555;
+}
+
+.Carrusel .lista .item:nth-child(1){
+    z-index: 1;
+
+}
+.btn button{
+    padding: 5px 10px;
+    border-radius: 18px;
+    font-weight: bold;
+}
+.Carrusel .lista .item:nth-child(1) .titulo,
+.Carrusel .lista .item:nth-child(1) .descripcion,
+.Carrusel .lista .item:nth-child(1) .btn{
+ transform: translateY(50px);
+ filter: blur(20px);   
+ opacity: 0;
+ animation: esconder 0.5s 0.6s linear 1 forwards;
+}
+@keyframes esconder{
+to{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+}
+}
+/* efecto next en el slider */
+.Carrusel.siguiente .lista .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: esconderImg 0.5s linear 1 forwards;
+
+}
+
+@keyframes esconderImg{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+.Carrusel.siguiente .sublista .item:nth-last-child(1){
+    width: 0;
+    overflow: hidden;
+    animation: esconderSublista .5s linear 1 forwards;
+
+}
+
+@keyframes esconderSublista{
+    to{
+        width: 150px;
+    }
+}
+
+.Carrusel.siguiente .sublista{
+    transform: translateX(150px);
+    animation: tranformacionSublista 0.5s linear 1 forwards;
+}
+@keyframes tranformacionSublista{
+    to{
+        transform: translateX(0) ;
+    }
+}
+
+/* efecto anterior  */
+
+.Carrusel.anterior .lista .item:nth-child(2) {
+    z-index: 2;
+}
+.Carrusel.anterior .lista .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: Anteriorimg .5s linear 1 forwards ;
+}
+
+@keyframes Anteriorimg{
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+.Carrusel.anterior .sublista .item:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: esconderSublista .5s linear 1 forwards;
+}
+
+.Carrusel.anterior .lista .item:nth-child(2) .titulo,
+.Carrusel.anterior .lista .item:nth-child(2) .descripcion,
+.Carrusel.anterior .lista .item:nth-child(2) .btn{
+ animation: escondido 1s linear 1 forwards;
+}
+@keyframes escondido{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+.Carrusel.siguiente .flechas button,
+.Carrusel.anterior .flechas button{
+    pointer-events: none;
+}
+.time{
+    width: 0%;
+    height: 5px;
+    background-color: #f1683a;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.Carrusel.siguiente .time,
+.Carrusel.anterior .time{
+   width: 100%;
+   animation: timepo 1s linear 1 forwards ;
+}
+@keyframes timepo{
+    to{
+        width: 0;
+    }
+}
+
+.header{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 150;
+    padding: 0 15px;
+    background: linear-gradient(2deg, black, #eeeeee6b);
+}
+.fontSi{
+    font-size: 30px;
+    color:white;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
+
+.Header_CtnIMG{
+    height: 100%;
+    width: 250px;
+}
+.CtnImgHeader{
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    /* filter: invert(); */
+    margin-left: 20px;
+}
+
+
+.LiastaNav{
+    width: 300px;
+    height: 60px;
+    margin: 10px;
+}
+
+.LiastaNav ul{
+    font-size: 28px;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+} 
+.LiastaNav ul li{
+    color: white;
+}
+
+.LiastaNav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.seccion{
+   margin: 10px 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.seccion .Ctncard:nth-child(1){
+    align-self:flex-start;
+    margin: 10px 0;
+}
+.seccion .Ctncard:nth-child(2){
+    align-self:flex-end;
+    margin: 10px 0;
+}
+.seccion .Ctncard:nth-child(3){
+    align-self:flex-start;
+    margin: 10px 0;
+}
+.seccion .Ctncard:nth-child(4){
+    align-self:flex-end;
+    margin: 10px 0;
+}
+.seccion  .Ctncard:nth-child(5){
+    align-self:flex-start;
+    margin: 10px 0;
+}
+
+
+.seccion .Ctncard{
+   
+    display: grid;
+  
+    width: 100%;
+  
+    grid-template:
+         "CardFoto CardSlider "
+        "CardFoto2 CardFoto2";
+   
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto 100px;
+     
+}
+.CardFoto{
+    align-content: center;
+    width: 100%;
+    grid-area: CardFoto;
+    
+
+}
+.CardFoto img{
+    filter: drop-shadow(9px 12px 12px black);
+    width: 100%;
+
+}
+
+.CardFoto2{
+    grid-area: CardFoto2 ;
+    
+}
+.CardFoto2 img{
+    width:  100%;
+    height: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+.CardSlider {
+    align-content: center;
+    width: 100%;
+    grid-area: CardSlider;
+    /* padding: 20px; */
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+
+.Footer{
+    width: 100%;
+    height: auto;
+    background: linear-gradient(0deg, #000, #858585, #000);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.Footer div img{
+   border-radius: 30px; 
+
+}
+.footerLogo{
+    width: 250px;
+}
+
+.redes{
+    display: flex;
+}
+.redes div a{
+ margin: 0 10px;
+}
+
+.bandera2{
+    align-self: end;
+    width: 200px;
+    height: 55px;
+    transform: rotate(180deg);
+}
+.bandera1{
+    width: 200px;
+    height: 50px;
+}
+.footerTitulo h2{
+    font-size: 46px;
+    color: #74150f;
+}
+
+.TituloMotos{
+    text-align: center;
+}
+.MotoTextoCentrado{
+    font-weight: bold;
+    font-size: 80px;
+    margin: auto;
+}
+
+.card{
+    margin: 20px 45px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #232323, #c7c7c7);
+    width: 18rem;
+}
+
+
+.CtnTarjetas{
+    margin: 10px 0;
+    border-bottom: solid;
+    border-top: solid;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.card-body h5{
+    height: 100%;
+    align-content: center;
+    text-align: center;
+   
+}
+@media (min-width: 768px) {
+    .desktop {
+        display: block;
+    }
+    .movil{
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .movil {
+        
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .seccion .Ctncard{
+   
+    display: grid;
+  
+    width: 100%;
+  
+    grid-template:
+        "CardSlider"
+        "CardFoto "
+        "CardFoto2";
+   
+    /* grid-template-columns: 40% 60%;
+    grid-template-rows: auto 100px; */
+     
+}
+.Carrusel .lista .item .ContenidoImg {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #00000057;
+    position: absolute;
+    top: 15%;
+    max-width: 100%;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    box-sizing: border-box;
+    color: #fff;
+}
+.Carrusel .lista .item .ContenidoImg .titulo h2 {
+    font-size: 70px;
+}
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+}
