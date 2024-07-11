@@ -99,17 +99,17 @@ align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #eee4;
+  background-color: rgba(252, 251, 251, 0.699);
   border: none;
-  color: #fff;
+  color: #070707;
   font-weight: bold;
   font-size: large;
   transition: 1s;
   z-index: 100;
 }
 .flechas button:hover{
-    background-color: #eee; 
-    color: #555;
+    background-color: rgba(17, 17, 17, 0.699);; 
+    color: #ffffff;
 }
 
 .Carrusel .lista .item:nth-child(1){
@@ -455,7 +455,7 @@ to{
 
 .form-container {
     max-width: 600px;
-    margin: auto;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
