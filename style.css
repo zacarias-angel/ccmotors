@@ -121,6 +121,11 @@ align-items: center;
     border-radius: 18px;
     font-weight: bold;
 }
+.btn button a{
+  text-decoration: none;
+  color: black;
+}
+
 .Carrusel .lista .item:nth-child(1) .titulo,
 .Carrusel .lista .item:nth-child(1) .descripcion,
 .Carrusel .lista .item:nth-child(1) .btn{
@@ -492,6 +497,11 @@ to{
     height: 100%;
     align-content: center;
     text-align: center;
+   
+}
+.card-body a{
+   text-decoration: none;
+   color: #070707;
    
 }
 @media (min-width: 768px) {
