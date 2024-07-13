@@ -37,8 +37,9 @@ text-decoration: none;
     position: absolute;
     top: 15%;
 
-    max-width: 80%;
-    left: 30%;
+    /* max-width: 80%; */
+    width: 400px;
+    left: 70%;
     transform: translate(-50%);
    
     box-sizing: border-box;
@@ -46,7 +47,7 @@ text-decoration: none;
     text-shadow: 0 5xp 10px #0004;
 }
 .Carrusel .lista .item .ContenidoImg .titulo h2{
-    font-size: 100px;
+    font-size: 70px;
 }
 .sublista{
     position: absolute;
@@ -72,17 +73,17 @@ text-decoration: none;
 }
 .sublista .item .ctnDesCard{
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
     right: 10px;
 }
 .sublista .item .ctnDesCard .titulo{
     font-weight: bold;
-    color: rgb(155, 149, 149);
+    color: rgb(255, 255, 255);
 }
 .sublista .item .ctnDesCard .descripcion{
     font-weight: bold;
-    color: rgb(155, 149, 149);
+    color: rgb(255, 255, 255);
 }
 
 .flechas{
@@ -501,7 +502,7 @@ to{
 }
 .card-body a{
    text-decoration: none;
-   color: #070707;
+
    
 }
 @media (min-width: 768px) {
